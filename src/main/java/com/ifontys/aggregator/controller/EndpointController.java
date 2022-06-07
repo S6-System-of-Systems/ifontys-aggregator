@@ -24,7 +24,7 @@ public class EndpointController {
     @GetMapping("GetTeacherData")
     public String GetTeacherData(@RequestParam("inummer") String inummer){
 //        String data = logic.getTeacherData(inummer);
-        template.convertAndSend(topic.getName(), "ifontys.endpoint", inummer);
+        template.convertAndSend(topic.getName(), "fhict.data", inummer);
 //        System.out.println(data);
         return " ";
     }

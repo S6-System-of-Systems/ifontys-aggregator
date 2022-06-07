@@ -19,8 +19,8 @@ public class SenderController {
 //    private String key;
 
     public void send(Object object) {
-        template.convertAndSend("ifontys.exchange", "ifontys.endpoint", "pannekoek");
-        System.out.println("[X] Sent '" + "pannekoek" + "'");
+        template.convertAndSend("ifontys.exchange", "ifontys.endpoint", object);
+        System.out.println("[X] Sent '" + object + "'");
     }
 
 }
