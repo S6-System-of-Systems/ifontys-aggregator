@@ -26,7 +26,7 @@ Voor de programmatische configuraties van de queues zijn de volgende bestanden b
 
 **Uitvoering**
 
-Nu alle systemen en informatie beschikbaar is kan er een verzoek gemaakt worden naar de aggregator endpoint, dit kan met het volgende:
+Nu alle systemen online staan en informatie m.b.t. logging etc. beschikbaar zijn, kan er een verzoek gemaakt worden naar de aggregator endpoint, dit kan met de volgende url:
 
 [https://aggregator.meelsnet.nl/endpoint/GetTeacherData?inummer=i873955](https://aggregator.meelsnet.nl/endpoint/GetTeacherData?inummer=i873955)
 
