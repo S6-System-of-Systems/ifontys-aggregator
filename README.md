@@ -3,7 +3,7 @@
 De vraag is gesteld om mee te kunnen kijken in de flow van de applicatie en hebben daarvoor wat dingen voorbereid om zelf eens te kunnen testen hoe de applicatie nou precies werkt.
 
 Zo zijn er momenteel verschillende endpoints waar naar gekeken kan worden, denk hier aan:
--- `ifontys-aggregator`
+- `ifontys-aggregator`
 - `ifontys-institute-endpoint`
 - `ifontys-tus-endpoint`
 
@@ -28,7 +28,7 @@ Voor de programmatische configuraties van de queues zijn de volgende bestanden b
 
 Nu alle systemen en informatie beschikbaar is kan er een verzoek gemaakt worden naar de aggregator endpoint, dit kan met het volgende:
 
-[User endpoint request](https://aggregator.meelsnet.nl/endpoint/GetTeacherData?inummer=i873955)
+[https://aggregator.meelsnet.nl/endpoint/GetTeacherData?inummer=i873955](https://aggregator.meelsnet.nl/endpoint/GetTeacherData?inummer=i873955)
 
 **Overige verzoeken**
 
