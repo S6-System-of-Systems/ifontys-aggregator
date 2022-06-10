@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,13 +29,14 @@ public class TeacherController {
         return builder.build();
     }
 
-    @GetMapping("/${inumber}")
+    @GetMapping("/{inumber}")
     public ResponseEntity<?> get(@PathVariable String inumber, RestTemplate restTemplate) {
         try {
-            return restTemplate.getForEntity(uri + /)
+            return restTemplate.getForEntity(uri + "/service/" + inumber, String.class);
+        } catch (Exception e) {
+            log.error(e.getMessage());
+            return new ResponseEntity<>("Error!, Please try again", HttpStatus.INTERNAL_SERVER_ERROR);
         }
-
-        return ResponseEntity.ok()
     }
 
 }

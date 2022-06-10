@@ -1,6 +1,6 @@
 package com.ifontys.aggregator.controller;
 
-import com.ifontys.aggregator.logic.EndpointLogic;
+import com.ifontys.aggregator.logic.MatchLogic;
 import org.springframework.amqp.core.TopicExchange;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 public class MatchController {
 
     @Autowired
-    private EndpointLogic logic;
+    private MatchLogic logic;
 
     @Autowired
     private RabbitTemplate template;
@@ -21,7 +21,7 @@ public class MatchController {
     @Autowired
     TopicExchange topic;
 
-    @GetMapping("/${inumber}")
+    @GetMapping("/{inumber}")
     public ResponseEntity<?> GetTeacherData(@PathVariable String inumber){
 //        String data = logic.getTeacherData(inummer);
         template.convertAndSend(topic.getName(), "fhict.data", inumber);
