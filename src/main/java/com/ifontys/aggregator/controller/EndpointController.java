@@ -27,6 +27,7 @@ public class EndpointController {
     public ResponseEntity<?> GetTeacherData(@RequestParam("inummer") String inummer){
 //        String data = logic.getTeacherData(inummer);
         template.convertAndSend(topic.getName(), "fhict.data", inummer);
+        System.out.println("[X] Requesting data for " + inummer);
 //        System.out.println(data);
         return ResponseEntity
                 .status(HttpStatus.ACCEPTED)

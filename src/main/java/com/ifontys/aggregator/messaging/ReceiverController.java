@@ -1,4 +1,5 @@
 package com.ifontys.aggregator.messaging;
+import com.ifontys.aggregator.logic.Aggregator;
 import com.ifontys.aggregator.logic.EndpointLogic;
 import org.springframework.amqp.core.TopicExchange;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
@@ -11,6 +12,9 @@ public class ReceiverController {
     private EndpointLogic logic;
 
     @Autowired
+    private Aggregator aggregator;
+
+    @Autowired
     private RabbitTemplate template;
 
     @Autowired
@@ -18,7 +22,7 @@ public class ReceiverController {
 
     @RabbitListener(queues = "#{autoDeleteQueue1.name}")
     public void Receive(String in) throws InterruptedException {
-        template.convertAndSend("tusReceiveRequest", in);
-        System.out.println(in);
+        //template.convertAndSend("tusReceiveRequest", in);
+        aggregator.AggregateResults(in);
     }
 }
