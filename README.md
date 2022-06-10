@@ -39,8 +39,6 @@ Waarom er geen Canvas data beschikbaar is van Merel heeft de reden om te kunnen 
 
 Nu alle systemen online staan en informatie m.b.t. logging etc. beschikbaar zijn, kan er een verzoek gemaakt worden naar de aggregator endpoint, dit kan met de volgende url:
 
-[https://aggregator.meelsnet.nl/endpoint/GetTeacherData?inummer=i873955](https://aggregator.meelsnet.nl/endpoint/GetTeacherData?inummer=i873955)
-
 Om de data op te halen van Wilrik, kan de volgende url uitgevoerd worden 
 - [https://aggregator.meelsnet.nl/teacher/i873955](https://aggregator.meelsnet.nl/teacher/i873955)
 - [https://aggregator.meelsnet.nl/match/i873955](https://aggregator.meelsnet.nl/match/i873955)
