@@ -6,6 +6,8 @@ import com.ifontys.aggregator.messaging.SenderController;
 import org.springframework.amqp.core.TopicExchange;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -22,10 +24,12 @@ public class EndpointController {
     TopicExchange topic;
 
     @GetMapping("GetTeacherData")
-    public String GetTeacherData(@RequestParam("inummer") String inummer){
+    public ResponseEntity<?> GetTeacherData(@RequestParam("inummer") String inummer){
 //        String data = logic.getTeacherData(inummer);
         template.convertAndSend(topic.getName(), "fhict.data", inummer);
 //        System.out.println(data);
-        return " ";
+        return ResponseEntity
+                .status(HttpStatus.ACCEPTED)
+                .body("Message has been delivered successfully");
     }
 }
