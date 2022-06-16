@@ -72,4 +72,9 @@ Er zijn overige verzoeken in het systeem, echter worden deze absoluut niet actie
 
 **Component diagram**
 
-![Component diagram](https://cdn.discordapp.com/attachments/940561839249567744/984363154861617182/updatedDiagram.png)
+![Component diagram](./images/component-diagram.svg)
+>Hier zijn de componenten en de stappen te zien hoe de flow van de applicatie verloopt.
+
+![Event-bus diagram](./images/event-bus.svg)
+
+>Hier is te zien welke topics naar waar gebruikt worden, er is een algemene exchange waar de TUS endpoint buiten valt. De TUS endpoint gebruikt een basis producer/consumer queue
