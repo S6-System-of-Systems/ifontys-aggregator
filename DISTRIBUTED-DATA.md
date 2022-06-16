@@ -6,7 +6,7 @@
   - [3.2. Doel van het onderzoek](#32-doel-van-het-onderzoek)
   - [3.3. Onderzoeksvragen](#33-onderzoeksvragen)
 - [4. Scope](#4-scope)
-- [5. Onderzoeksstrategiën](#5-onderzoeksstrategien)
+- [5. Onderzoeksstrategiën](#5-onderzoeksstrategiën)
 - [6. Onderzoek](#6-onderzoek)
 - [7. Referenties](#7-referenties)
 
@@ -176,7 +176,7 @@ In dit voorbeeld kon de `Payment Service` reageren op de `Order Service`, hoewel
 
 ***Conclusie***
 
-
+Nu duidelijk wat de principes inhouden en kunnen bieden is er niet een specifieke principe die gebruikt wordt voor het maken van een gedistribueerde applicatie. Onderdelen van het ene principe zijn te vinden in de andere principe, ze kunnen dus niet echt gezien worden als een afzonderlijke regel/stelling/principe, maar meer een leidraad die ons op het goede pad brengt. Uiteraard komen bepaalde kenmerken meer naar boven dan andere bij verschillende principes.
 
 **Welke modellen zijn toepassbaar op distributed data?**
 
