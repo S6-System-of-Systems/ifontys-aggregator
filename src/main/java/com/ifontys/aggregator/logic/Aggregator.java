@@ -3,22 +3,36 @@ package com.ifontys.aggregator.logic;
 import com.rabbitmq.client.Command;
 import org.apache.tomcat.util.json.JSONParser;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.stereotype.Component;
 
 import java.lang.reflect.Array;
 import java.nio.charset.StandardCharsets;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 
 @Component
 public class Aggregator {
 
     JSONObject aggregatedData= new JSONObject();
     JSONObject data = new JSONObject();
+    JSONObject metadata = new JSONObject();
+    JSONArray tracer = new JSONArray();
+    private final static double aggregatorVersion = 1.0;
 
     public void AggregateResults(String result){
         data = new JSONObject(result);
+        JSONObject trace = new JSONObject("{'microservice': 'ifontys.aggregator', 'date': '"+ LocalDateTime.now() + "'}");
+        tracer.put(trace);
+
+        metadata.put("tggegatorVersion", Double.toString(aggregatorVersion));
+        metadata.put("tracer", tracer);
+
+
+        aggregatedData.put("metadata", metadata);
 
         PutProperty("pcn", "canvas","id", String.class);
         PutProperty("name", "canvas", "givenName", String.class);
@@ -52,7 +66,7 @@ public class Aggregator {
         PutProperty("responsibilities", "sharepoint", "responsibilities", ArrayList.class);
         PutProperty("skills", "sharepoint", "skills", ArrayList.class);
         PutProperty("title", "sharepoint", "title", String.class);
-      
+
 
         System.out.println("[X] Aggregatred data: " + aggregatedData);
     }
