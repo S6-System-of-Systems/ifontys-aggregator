@@ -180,11 +180,22 @@ Nu duidelijk wat de principes inhouden en kunnen bieden is er niet een specifiek
 
 **Welke modellen zijn toepassbaar op distributed data?**
 
+Omdat data aan het veranderen is en het gebruik van data nog sneller verandert, is er een enorme groei in het aantal datatools en ontwerpstrategieen die dit ondersteunen. Hieronder staan 5 verschillende modellen uitgelicht voor het opnemen van data in voor het ontwikkelproces waar grotendeels niet aan gedacht wordt.
+
+**_Data-centric architecture development_**
+
+De keuzes die je hebt met betrekking tot real-time big-data architecturen is overweldigend. Daarom is het nodig om op een correcte manier vergelijkingen te kunnen maken.
+
+**_Data stream processing_**
+
+**_Data event sourcing_**
+
+**_Distributed Data Structures (DDS)_**
+
 # 7. Referenties
 
 **ACID Principe**
 - [https://medium.com/@pranabj.aec/acid-cap-and-base-cc73dee43f8c](https://medium.com/@pranabj.aec/acid-cap-and-base-cc73dee43f8c)
-- 
 
 **CAP Theorem**
 
@@ -193,3 +204,12 @@ Nu duidelijk wat de principes inhouden en kunnen bieden is er niet een specifiek
 - [https://en.wikipedia.org/wiki/CAP_theorem](https://en.wikipedia.org/wiki/CAP_theorem)
 - [https://fhict.instructure.com/courses/12090/pages/gdpr-and-data-complexities-theoretical-background?module_item_id=751978](https://fhict.instructure.com/courses/12090/pages/gdpr-and-data-complexities-theoretical-background?module_item_id=751978)
 - [https://www.youtube.com/watch?v=k-Yaq8AHlFA](https://www.youtube.com/watch?v=k-Yaq8AHlFA)
+
+**Base Principe**
+
+- [https://medium.com/@pranabj.aec/acid-cap-and-base-cc73dee43f8c](https://medium.com/@pranabj.aec/acid-cap-and-base-cc73dee43f8c)
+
+**Data-centric architecture development**
+
+- [https://dzone.com/articles/from-lambda-to-kappa-a-guide-on-real-time-big-data](https://dzone.com/articles/from-lambda-to-kappa-a-guide-on-real-time-big-data)
+- 
