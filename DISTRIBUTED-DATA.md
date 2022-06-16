@@ -188,7 +188,9 @@ Omdat data aan het veranderen is en het gebruik van data nog sneller verandert, 
 
 **_Data-centric architecture development_**
 
-De keuzes die je hebt met betrekking tot real-time big-data architecturen is overweldigend. Daarom is het nodig om op een correcte manier vergelijkingen te kunnen maken.
+Data-centric architecture of Database-centric architecture heeft verschillende betekenissen, meestal met betrekking tot software-architecturen waarin databases een cruciale rol spelen. Vaak is deze beschrijving bedoeld als contrast tussen het ontwerp en een alternatieve benadering. De karakters van een architectuur als _databasegericht_ kan bijvoorbeeld elke combinatie van het volgende betekenen:
+
+
 
 **_Data stream processing_**
 
@@ -216,4 +218,4 @@ De keuzes die je hebt met betrekking tot real-time big-data architecturen is ove
 **Data-centric architecture development**
 
 - [https://dzone.com/articles/from-lambda-to-kappa-a-guide-on-real-time-big-data](https://dzone.com/articles/from-lambda-to-kappa-a-guide-on-real-time-big-data)
-- 
+- [https://www.vistaprojects.com/blog/data-centric-architecture/#:~:text=Within%20data%2Dcentric%20architecture%2C%20the,%2C%20business%20decisions%2C%20and%20culture.](https://www.vistaprojects.com/blog/data-centric-architecture/#:~:text=Within%20data%2Dcentric%20architecture%2C%20the,%2C%20business%20decisions%2C%20and%20culture.)
