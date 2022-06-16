@@ -11,9 +11,11 @@
 
 # 2. Document historie
 
-| Versie | Veranderingen                                                                                  | Datum      |
-| -----: | ---------------------------------------------------------------------------------------------- | ---------- |
-|    0.1 | Eerste opzet document                                                                          | 30-05-2022 |
+| Versie | Veranderingen                                                  | Datum      |
+|-------:|----------------------------------------------------------------|------------|
+|    0.1 | Eerste opzet document                                          | 30-05-2022 |
+|    0.2 | Uitwerking deelvragen:<br/>- ACID principe<br/>- BASE principe | 16-6-2022  |
+
 
 # 3. Inleiding
 
@@ -110,6 +112,8 @@ Het ACID principe is een principe dat gebruikt wordt om de transacties van een d
 - **Isolation:** Het betekent dat een lopende transactie niet mag worden gezien of gezien door andere gelijktijdig lopende transacties. Het zou anders nooit in staat zijn om de staat terug te zetten naar het begin.
 - **Durability:** Eeenmaal committed, mogen de updates van een transactie niet verloren gaan. Databasesystemen maken hiervoor gebruik van write-ahead logs, harde schijven, back-ups, enz.
 
+Nu is dit heel goed voor een enkel data systeem, echter zodra er meerdere systemen geintroduceerd worden, die voornamelijk het ACID principe volgen, kan dit voor problemen zorgen. Daarvoor zijn er andere rule-sets die toegepast kunnen worden om dit af te vangen.
+
 ***CAP theorem***
 
 Het CAP theorem bestaat uit drie componenten omdat ze betrekking hebben op distributed data opslag:
@@ -126,11 +130,32 @@ NoSQL-databases worden geclassificeerd op basis van de twéé CAP-kenmerken die 
 - **AP Databases:** Een AP database levert beschikbaarheid en partition-tolerence ten koste van consistentie. Wanneer een partitie optreedt, blijven alle knooppunten beschikbaar, maar die aan het verkeerde uiteinde van een partitie kunnen een oudere versie van gegevens ontvangen.
 - **CA Databases:** Een CA database zorgt voor consistentie en beschikbaarheid op alle knooppunten. Het kan dit echter niet doen als er een partitie is tussen twee willekeurige knooppunten in het systeem.
 
-<div style="text-align:center">
-    <img src="./img/cap-theorem.jpg" />
-</div>
+![CAP theorem](./images/cap-theorem.jpg)
+
+***BASE principe***
+
+BASE staat voor **B**asically-**A**vailable **S**oft-state **E**ventually-consistent. Wat de onderdelen betekenen staat hieronder uitgelegd:
+
+- **B**asically-**A**vailable: Een gedistribueerd systeem zou beschikbaar moeten zijn om met enige bevestiging te reageren (zelfs als het een foutbericht is) op elk binnenkomend verzoek.
+- **S**oft-state: Het systeem kan van status blijven veranderen wanneer het nieuwe informatie ontvangt.
+- **E**ventually-consistent: De componenten in het systeem weerspiegelen mogelijk niet dezelfde waarde/status van een record op een bepaald tijdstip. Ze zullen het uiteindelijk met de tijd regelen.
+
+>**Voorbeeld:** Als er gekeken wordt naar de volgende twee onderling verbonden, maar onafhankelijke services, kunnen de volgende verwerkingsstappen op hoog niveau zijn
+
+![2 services base principle](./images/base-principle.png)
+
+1. Klant plaats order
+2. De `Order Service` werkt de details bij in de lokale database. Het markeert de betalingsstatus als `payment_initiated`
+3. De `Order Service` stuurt een bericht naar de wachtrij, om door de `Payment Service` opgepakt te worden
+4. De `Payment Service` ontvangt het bericht, maar om de een of andere reden mislukt de betalingsverwerking. Het werkt de details bij in een lokale database en stuurt ook een bericht naar de `Order Service` met de details
+5. De `Order Service` werkt zijn payment record als `payment_failed` en stuurt de alternatieve betalingslinks naar de gebruiker
+6. Stap **3** en **4** worden opnieuw uitgevoerd wanneer de gebruiker de betaling opnieuw probeert. Na een succesvolle afronding van de betaling, werkt de `Payment Service` zijn gegevens bij als `payment_complete` en stuurt nog een bericht met de updates naar de `Order Service`
+7. De `Order Service` werkt zijn record bij met `payment_complete`
+
+In dit voorbeeld kon de `Payment Service` reageren op de `Order Service`, hoewel de verwerking zelfs de eerste keer mislukte. De `Order Service` had de lokale betalingsstatus gewijzigd op basis van de updates die van de `Payment Service` waren ontvangen en de `Order` en `Payment Service` hadden verschillende betalingsstatussen, terwijl de definitieve status pas ne een tijdje werd bijgewerkt.
 
 ***Conclusie***
+
 
 
 **Welke modellen zijn toepassbaar op distributed data?**
@@ -147,3 +172,4 @@ NoSQL-databases worden geclassificeerd op basis van de twéé CAP-kenmerken die 
 - [https://www.ibm.com/cloud/learn/cap-theorem](https://www.ibm.com/cloud/learn/cap-theorem)
 - [https://en.wikipedia.org/wiki/CAP_theorem](https://en.wikipedia.org/wiki/CAP_theorem)
 - [https://fhict.instructure.com/courses/12090/pages/gdpr-and-data-complexities-theoretical-background?module_item_id=751978](https://fhict.instructure.com/courses/12090/pages/gdpr-and-data-complexities-theoretical-background?module_item_id=751978)
+- [https://www.youtube.com/watch?v=k-Yaq8AHlFA](https://www.youtube.com/watch?v=k-Yaq8AHlFA)
