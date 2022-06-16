@@ -8,14 +8,18 @@
 - [4. Scope](#4-scope)
 - [5. Onderzoeksstrategiën](#5-onderzoeksstrategiën)
 - [6. Onderzoek](#6-onderzoek)
+  - [6.1 Hoe verschilt distributed data tussen een microservice architectuur en een standaard MVC architectuur?](#61-hoe-verschilt-distributed-data-tussen-een-microservice-architectuur-en-een-standaard-mvc-architectuur)
+  - [6.2 Wat is de 3 V's van data?](#62-wat-is-de-3-vs-van-data)
+  - [6.3 Distributed Data specifieke garanties?](#63-distributed-data-specifieke-garanties)
+  - [6.4 Welke modellen zijn toepassbaar op distributed data?](#64-welke-modellen-zijn-toepassbaar-op-distributed-data)
 - [7. Referenties](#7-referenties)
 
 # 2. Document historie
 
-| Versie | Veranderingen                                                                             | Datum      |
-|-------:|-------------------------------------------------------------------------------------------|------------|
-|    0.1 | Eerste opzet document                                                                     | 30-05-2022 |
-|    0.2 | Uitwerking deelvragen:<br/>- ACID principe<br/>- BASE principe<br/>Strategieen toegevoegd | 16-6-2022  |
+| Versie | Veranderingen                                                                                                                                  | Datum      |
+|-------:|------------------------------------------------------------------------------------------------------------------------------------------------|------------|
+|    0.1 | Eerste opzet document                                                                                                                          | 30-05-2022 |
+|    0.2 | Uitwerking deelvragen:<br/>- ACID principe<br/>- BASE principe<br/>Strategieen toegevoegd<br/>Gestart met sub-vraag 4<br/>Lay-out aanpassingen | 16-6-2022  |
 
 
 # 3. Inleiding
@@ -66,9 +70,9 @@ Welke modellen zijn toepassbaar op distributed data?
 
 # 6. Onderzoek
 
-**Hoe verschilt distributed data tussen een microservice architectuur en een standaard MVC architectuur?**
+## 6.1 Hoe verschilt distributed data tussen een microservice architectuur en een standaard MVC architectuur?
 
-**Wat is de 3 V's van data?**
+## 6.2 Wat is de 3 V's van data?
 
 ***Cloud***
 
@@ -108,7 +112,7 @@ Een laatste gedachtegang: er zijn mannieren om big data uit te pluizen en inzich
 
 De 3 V's beschrijven data die geanalyzeerd kan worden (het process waar je waarde uit data haalt). Alles bij elkaar genomen is er het potentieel voor erbazingwekkend inzicht of zorgwekkend overzicht. Net als bij elke grote kracht komt er ook bij big data een grote belofte en verantwoordelijkheid kijken.
 
-**Distributed Data specifieke garanties?**
+## 6.3 Distributed Data specifieke garanties?
 
 Op het gebied van databases zijn relational databases al bekend, waarin transacties worden gebruikt om updates van informatie te verwerken. Als er in grote hoeveelheden data/gegevens worden bijgewerkt kan dit een uitdaging zijn om de inhoud van de database(s) in een geldige staat te houden. Om te voorkomen dat data wordt verloren kan er een mechanisme worden gebruikt om de transacties te valideren. Het mechanisme wat dan toegepast kan worden, wordt ook wel het ACID-principe genoemd. Het ACID-principe is een principe dat gebruikt wordt om de transacties van een database te valideren.
 
@@ -178,7 +182,7 @@ In dit voorbeeld kon de `Payment Service` reageren op de `Order Service`, hoewel
 
 Nu duidelijk wat de principes inhouden en kunnen bieden is er niet een specifieke principe die gebruikt wordt voor het maken van een gedistribueerde applicatie. Onderdelen van het ene principe zijn te vinden in de andere principe, ze kunnen dus niet echt gezien worden als een afzonderlijke regel/stelling/principe, maar meer een leidraad die ons op het goede pad brengt. Uiteraard komen bepaalde kenmerken meer naar boven dan andere bij verschillende principes.
 
-**Welke modellen zijn toepassbaar op distributed data?**
+## 6.4 Welke modellen zijn toepassbaar op distributed data?
 
 Omdat data aan het veranderen is en het gebruik van data nog sneller verandert, is er een enorme groei in het aantal datatools en ontwerpstrategieen die dit ondersteunen. Hieronder staan 5 verschillende modellen uitgelicht voor het opnemen van data in voor het ontwikkelproces waar grotendeels niet aan gedacht wordt.
 
