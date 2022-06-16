@@ -6,15 +6,16 @@
   - [3.2. Doel van het onderzoek](#32-doel-van-het-onderzoek)
   - [3.3. Onderzoeksvragen](#33-onderzoeksvragen)
 - [4. Scope](#4-scope)
-- [5. Onderzoek](#5-onderzoek)
-- [6. Referenties](#6-referenties)
+- [5. Onderzoeksstrategiën](#5-onderzoeksstrategien)
+- [6. Onderzoek](#6-onderzoek)
+- [7. Referenties](#7-referenties)
 
 # 2. Document historie
 
-| Versie | Veranderingen                                                  | Datum      |
-|-------:|----------------------------------------------------------------|------------|
-|    0.1 | Eerste opzet document                                          | 30-05-2022 |
-|    0.2 | Uitwerking deelvragen:<br/>- ACID principe<br/>- BASE principe | 16-6-2022  |
+| Versie | Veranderingen                                                                             | Datum      |
+|-------:|-------------------------------------------------------------------------------------------|------------|
+|    0.1 | Eerste opzet document                                                                     | 30-05-2022 |
+|    0.2 | Uitwerking deelvragen:<br/>- ACID principe<br/>- BASE principe<br/>Strategieen toegevoegd | 16-6-2022  |
 
 
 # 3. Inleiding
@@ -35,7 +36,6 @@ Hoe kan data gedistribueerd worden op basis van een microservice architectuur?
 
 **Onderzoeksvragen:**
 1. Hoe verschilt distributed data tussen een microservice architectuur en een standaard MVC architectuur?
-   -  
 2. Wat is de 3 V's van data?
 3. Distributed Data specifieke garanties?
 4. Welke modellen zijn toepassbaar op distributed data?
@@ -44,7 +44,27 @@ Hoe kan data gedistribueerd worden op basis van een microservice architectuur?
 
 De scope van het onderzoek is om te onderzoeken wat Distributed Data exact is en wat het kan bieden in de praktijk. Wat zijn de toepassingen van distributed data? Wat is de toegevoegde waarde van Distributed Data? en hoe zijn deze praktijken toe te passen? In dit onderzoek zal dan ook alleen Distributed Data aanbod komen.
 
-# 5. Onderzoek
+# 5. Onderzoeksstrategiën
+
+Hoe verschilt distributed data tussen een microservice architectuur en een standaard MVC architectuur?
+- IT architecture sketching
+
+Wat is de 3 V's van data?
+- Literature
+
+Distributed Data specifieke garanties?
+- Literature
+
+- Expert interview
+
+Welke modellen zijn toepassbaar op distributed data?
+
+- Prototyping
+- Pitch
+- Brainstorm
+- Available product analysis
+
+# 6. Onderzoek
 
 **Hoe verschilt distributed data tussen een microservice architectuur en een standaard MVC architectuur?**
 
@@ -160,7 +180,7 @@ In dit voorbeeld kon de `Payment Service` reageren op de `Order Service`, hoewel
 
 **Welke modellen zijn toepassbaar op distributed data?**
 
-# 6. Referenties
+# 7. Referenties
 
 **ACID Principe**
 - [https://medium.com/@pranabj.aec/acid-cap-and-base-cc73dee43f8c](https://medium.com/@pranabj.aec/acid-cap-and-base-cc73dee43f8c)
