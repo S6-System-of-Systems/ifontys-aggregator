@@ -30,7 +30,7 @@ Om het leerdoel distributed data aan te tonen en bij te dragen aan het leerdoel 
 
 ## 3.2. Doel van het onderzoek
 
-PANNEKOEK
+
 
 ## 3.3. Onderzoeksvragen
 
@@ -112,6 +112,10 @@ Een laatste gedachtegang: er zijn mannieren om big data uit te pluizen en inzich
 
 De 3 V's beschrijven data die geanalyzeerd kan worden (het process waar je waarde uit data haalt). Alles bij elkaar genomen is er het potentieel voor erbazingwekkend inzicht of zorgwekkend overzicht. Net als bij elke grote kracht komt er ook bij big data een grote belofte en verantwoordelijkheid kijken.
 
+***Conclusie***
+Big data wordt uitgedrukt in 3 V's. Volume (hoeveeheid data), velocity(snelheid waarmee data komt) en varierty(de verschillende soorten data.
+Als je twijfelt over of je met big data bezig bent kun je je houden aan de volgende vuistregel: Wanneer je praat over data en termen die verder gaan dan buckets, wanneer je begint te praten over epic kwantiteiten, grote flow en een wijd assortiment, dan heb je het over big data. 
+Analytics is het proces waar je data uitpluist om inzicht te geven wat toegepast kan worden op het oplossen van problemen en herkennen van kansen
 ## 6.3 Distributed Data specifieke garanties?
 
 Op het gebied van databases zijn relational databases al bekend, waarin transacties worden gebruikt om updates van informatie te verwerken. Als er in grote hoeveelheden data/gegevens worden bijgewerkt kan dit een uitdaging zijn om de inhoud van de database(s) in een geldige staat te houden. Om te voorkomen dat data wordt verloren kan er een mechanisme worden gebruikt om de transacties te valideren. Het mechanisme wat dan toegepast kan worden, wordt ook wel het ACID-principe genoemd. Het ACID-principe is een principe dat gebruikt wordt om de transacties van een database te valideren.
@@ -197,6 +201,15 @@ Data-centric architecture of Database-centric architecture heeft verschillende b
 **_Data event sourcing_**
 
 **_Distributed Data Structures (DDS)_**
+
+**Prototyping**
+
+Uit de voorbeeldmodellen in canvas die gaan over distributed data passen we er een toe. We zullen eventlogging implementeren in onze microservices.
+Er zal vanaf het eerste bericht metadata meegegeven worden die bijhouden bij welke microservice en op welk moment de message daar is geweest en belangrijke data zoals de versie van de aggregator en transformator die het bericht behandeld hebben.
+
+
+**Available Product analysis**
+Voor we begonnen aan onze eigen implementatie van eventlogging zijn we op het internet gaan zoeken naar oplossingen die al aangeboden voor event logging. 
 
 # 7. Referenties
 
