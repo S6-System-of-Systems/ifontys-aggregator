@@ -30,7 +30,7 @@ Om het leerdoel distributed data aan te tonen en bij te dragen aan het leerdoel 
 
 ## 3.2. Doel van het onderzoek
 
-PANNEKOEK
+Het doel van het onderzoek is om te kijken hoe distributed data werkt, maar uiteraard ook hoe distributed in de praktijk gebruikt en geimplementeerd kan worden. Als het onderwerp distributed data duidelijk is en we weten hoe dit geimplementeerd moet worden. Dan wordt het in de toekomst makkelijker om voor distributed data te gaan.
 
 ## 3.3. Onderzoeksvragen
 
@@ -182,15 +182,17 @@ In dit voorbeeld kon de `Payment Service` reageren op de `Order Service`, hoewel
 
 Nu duidelijk wat de principes inhouden en kunnen bieden is er niet een specifieke principe die gebruikt wordt voor het maken van een gedistribueerde applicatie. Onderdelen van het ene principe zijn te vinden in de andere principe, ze kunnen dus niet echt gezien worden als een afzonderlijke regel/stelling/principe, maar meer een leidraad die ons op het goede pad brengt. Uiteraard komen bepaalde kenmerken meer naar boven dan andere bij verschillende principes.
 
-## 6.4 Welke modellen zijn toepassbaar op distributed data?
+## 6.4 Welke modellen zijn toepasbaar op distributed data?
 
 Omdat data aan het veranderen is en het gebruik van data nog sneller verandert, is er een enorme groei in het aantal datatools en ontwerpstrategieen die dit ondersteunen. Hieronder staan 5 verschillende modellen uitgelicht voor het opnemen van data in voor het ontwikkelproces waar grotendeels niet aan gedacht wordt.
 
 **_Data-centric architecture development_**
 
-Data-centric architecture of Database-centric architecture heeft verschillende betekenissen, meestal met betrekking tot software-architecturen waarin databases een cruciale rol spelen. Vaak is deze beschrijving bedoeld als contrast tussen het ontwerp en een alternatieve benadering. De karakters van een architectuur als _databasegericht_ kan bijvoorbeeld elke combinatie van het volgende betekenen:
+Organisaties beginnen meer te kijken naar data-centric modellen, want er zijn veel limitaties met betrekking tot application-centric toepassingen. Het voornamelijkste is dat met een data-centric architecture de data aan de frontline staat.
 
+Veel online bedrijven hebben sinds hun oprichting een data-centrische benadering gevolgd. Ze organiseren hun infrastructuur en services op een manier die de gegevensstructuur handhaaft, ongeacht hoe individuele applicaties worden geimplementeerd, bijgewerkt, vervangen of buiten gebruik worden gesteld. Wat er ook gebeurd, de data zal blijven voortbestaan.
 
+Met de data-centrische benadering ontwerpen IT-teams infrastructuur rond gegevensvereisten in plaats van gegevens pasbaar te maken in de infrastructuur. Hoewel kosten en operationeel gemak nog steeds belangrijk zijn, worden de gegevens centraal gezet voor de manier van deployen in de infrastructuur.
 
 **_Data stream processing_**
 
@@ -219,3 +221,5 @@ Data-centric architecture of Database-centric architecture heeft verschillende b
 
 - [https://dzone.com/articles/from-lambda-to-kappa-a-guide-on-real-time-big-data](https://dzone.com/articles/from-lambda-to-kappa-a-guide-on-real-time-big-data)
 - [https://www.vistaprojects.com/blog/data-centric-architecture/#:~:text=Within%20data%2Dcentric%20architecture%2C%20the,%2C%20business%20decisions%2C%20and%20culture.](https://www.vistaprojects.com/blog/data-centric-architecture/#:~:text=Within%20data%2Dcentric%20architecture%2C%20the,%2C%20business%20decisions%2C%20and%20culture.)
+- [https://tdan.com/the-data-centric-revolution-data-centric-vs-data-driven/20288](https://tdan.com/the-data-centric-revolution-data-centric-vs-data-driven/20288)
+- [https://www.techtarget.com/searchdatacenter/tip/Why-and-how-to-adopt-a-data-centric-architecture](https://www.techtarget.com/searchdatacenter/tip/Why-and-how-to-adopt-a-data-centric-architecture)
