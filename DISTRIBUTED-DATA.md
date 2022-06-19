@@ -216,6 +216,11 @@ Voor we begonnen aan onze eigen implementatie van eventlogging zijn we op het in
 
 # 7. Referenties
 
+**3 V's**
+- [https://bigdataldn.com/news/big-data-the-3-vs-explained/](https://bigdataldn.com/news/big-data-the-3-vs-explained/)
+- [Reserach universiteit Bruhl](https://link.springer.com/article/10.1007/s12599-013-0249-5)
+- 
+
 **ACID Principe**
 - [https://medium.com/@pranabj.aec/acid-cap-and-base-cc73dee43f8c](https://medium.com/@pranabj.aec/acid-cap-and-base-cc73dee43f8c)
 
