@@ -13,6 +13,7 @@
   - [6.3 Distributed Data specifieke garanties?](#63-distributed-data-specifieke-garanties)
   - [6.4 Welke modellen zijn toepasbaar op distributed data?](#64-welke-modellen-zijn-toepasbaar-op-distributed-data)
 - [7. Referenties](#7-referenties)
+      - [Data-centric architecture development](#data-centric-architecture-development)
 
 # 2. Document historie
 
@@ -201,8 +202,14 @@ Met de data-centrische benadering ontwerpen IT-teams infrastructuur rond gegeven
 
 **_Data stream processing_**
 
-```
-veel verschillende dynamische data sources, omdat er zoveel keuze is, heeft het de enterprise omgeving in de data architectuur een stuk complexer gemaakt met de reden dat het niet alleen opslaan van data is, maar ook het analyseren en beschikbaar stellen aan applicaties op een snelle manier
+Op de markt van vandaag zijn er veel oplossingen voor dynamic data stream processing oplossingen te vinden, wat niet alleen een mooie oplossing is, maar wat ook absoluut meer complexiteit in de architectuur brengt. De reden hiervan is dat data niet alleen opgeslagen wordt, maar het analyseren en beschikbaar stellen van data aan de desbetreffende applicaties (op een snelle manier) komt er ook bij kijken. Een bijkomend probleem is dat met Data streaming data altijd in beweging is en (bijna) nooit stil staat.
+
+De data die in beweging is wordt doormiddel van event streaming platforms geleverd zoals Confluent. Met deze vraag is het dan ook de bedoeling om een antwoord te kunnen geven op de vraag hoe data streaming werkt en hoe dit eventueel toegepast kan worden in de praktijk.
+
+
+
+
+<!-- veel verschillende dynamische data sources, omdat er zoveel keuze is, heeft het de enterprise omgeving in de data architectuur een stuk complexer gemaakt met de reden dat het niet alleen opslaan van data is, maar ook het analyseren en beschikbaar stellen aan applicaties op een snelle manier
 
 Met het probleem van data, komt ook het probleem dat data altijd in beweging is.
 
@@ -229,9 +236,8 @@ Organizaties implementeren event streaming om real-time processing uit te kunnen
 - Nieuwe functionaliteit wat eerst niet geimplementeerd kon worden
 - Uiteraard de competitie op de markt
 
-https://assets.confluent.io/m/26933af228cc1d15/original/20211129-Guide-Adopting_Confluent.pdf
+https://assets.confluent.io/m/26933af228cc1d15/original/20211129-Guide-Adopting_Confluent.pdf -->
 
-```
 
 **_Data event sourcing_**
 
@@ -268,9 +274,9 @@ Voor we begonnen aan onze eigen implementatie van eventlogging zijn we op het in
 
 1. [https://medium.com/@pranabj.aec/acid-cap-and-base-cc73dee43f8c](https://medium.com/@pranabj.aec/acid-cap-and-base-cc73dee43f8c)
 
-**Data-centric architecture development**
+#### Data-centric architecture development
 
 1. [https://dzone.com/articles/from-lambda-to-kappa-a-guide-on-real-time-big-data](https://dzone.com/articles/from-lambda-to-kappa-a-guide-on-real-time-big-data)
-1. [https://www.vistaprojects.com/blog/data-centric-architecture/#:~:text=Within%20data%2Dcentric%20architecture%2C%20the,%2C%20business%20decisions%2C%20and%20culture.](https://www.vistaprojects.com/blog/data-centric-architecture/#:~:text=Within%20data%2Dcentric%20architecture%2C%20the,%2C%20business%20decisions%2C%20and%20culture.)
-1. [https://tdan.com/the-data-centric-revolution-data-centric-vs-data-driven/20288](https://tdan.com/the-data-centric-revolution-data-centric-vs-data-driven/20288)
-1. [https://www.techtarget.com/searchdatacenter/tip/Why-and-how-to-adopt-a-data-centric-architecture](https://www.techtarget.com/searchdatacenter/tip/Why-and-how-to-adopt-a-data-centric-architecture)
+2. [https://www.vistaprojects.com/blog/data-centric-architecture/#:~:text=Within%20data%2Dcentric%20architecture%2C%20the,%2C%20business%20decisions%2C%20and%20culture.](https://www.vistaprojects.com/blog/data-centric-architecture/#:~:text=Within%20data%2Dcentric%20architecture%2C%20the,%2C%20business%20decisions%2C%20and%20culture.)
+3. [https://tdan.com/the-data-centric-revolution-data-centric-vs-data-driven/20288](https://tdan.com/the-data-centric-revolution-data-centric-vs-data-driven/20288)
+4. [https://www.techtarget.com/searchdatacenter/tip/Why-and-how-to-adopt-a-data-centric-architecture](https://www.techtarget.com/searchdatacenter/tip/Why-and-how-to-adopt-a-data-centric-architecture)
