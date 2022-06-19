@@ -11,7 +11,7 @@
   - [6.1 Hoe verschilt distributed data tussen een microservice architectuur en een standaard MVC architectuur?](#61-hoe-verschilt-distributed-data-tussen-een-microservice-architectuur-en-een-standaard-mvc-architectuur)
   - [6.2 Wat is de 3 V's van data?](#62-wat-is-de-3-vs-van-data)
   - [6.3 Distributed Data specifieke garanties?](#63-distributed-data-specifieke-garanties)
-  - [6.4 Welke modellen zijn toepassbaar op distributed data?](#64-welke-modellen-zijn-toepassbaar-op-distributed-data)
+  - [6.4 Welke modellen zijn toepasbaar op distributed data?](#64-welke-modellen-zijn-toepasbaar-op-distributed-data)
 - [7. Referenties](#7-referenties)
 
 # 2. Document historie
@@ -201,6 +201,38 @@ Met de data-centrische benadering ontwerpen IT-teams infrastructuur rond gegeven
 
 **_Data stream processing_**
 
+```
+veel verschillende dynamische data sources, omdat er zoveel keuze is, heeft het de enterprise omgeving in de data architectuur een stuk complexer gemaakt met de reden dat het niet alleen opslaan van data is, maar ook het analyseren en beschikbaar stellen aan applicaties op een snelle manier
+
+Met het probleem van data, komt ook het probleem dat data altijd in beweging is.
+
+De data die in beweging is wordt geleverd door event streaming platforms zoals Confluent, met deze vraag is het de bedoeling om hier een antwoord op te geven hoe data streaming werkt en hoe dit eventueel toegepast kan worden.
+
+**Event streaming**
+
+event streaming is een manier van ontwerpen en ontwikkelen van applicaties, de applicaties reageren op dingen die om zich heen gebeuren, in andere woorden, de applicaties reageren op events. Deze events worden aangemaakt door applicaties die een event streaming mechanisme gebruiken om informatie te distribueren.
+
+Wat is een event
+
+Een event is een feit - iets dat gebeurd is in het verleden:
+
+- een gebruiker heeft een actie uitgevoerd
+- een item is verwijderd uit een winkelwagen
+
+Als een applicatie zo een event binnenkrijgt, kan de betreffende applicatie hierop handelen.
+
+Deze applicaties worden ook wel stream processing applicaties genoemd.
+
+Organizaties implementeren event streaming om real-time processing uit te kunnen voeren en er zijn hier verschillende redenen voor:
+
+- Het verbeteren van customer experience
+- Nieuwe functionaliteit wat eerst niet geimplementeerd kon worden
+- Uiteraard de competitie op de markt
+
+https://assets.confluent.io/m/26933af228cc1d15/original/20211129-Guide-Adopting_Confluent.pdf
+
+```
+
 **_Data event sourcing_**
 
 **_Distributed Data Structures (DDS)_**
@@ -217,23 +249,23 @@ Voor we begonnen aan onze eigen implementatie van eventlogging zijn we op het in
 # 7. Referenties
 
 **ACID Principe**
-- [https://medium.com/@pranabj.aec/acid-cap-and-base-cc73dee43f8c](https://medium.com/@pranabj.aec/acid-cap-and-base-cc73dee43f8c)
+1. [https://medium.com/@pranabj.aec/acid-cap-and-base-cc73dee43f8c](https://medium.com/@pranabj.aec/acid-cap-and-base-cc73dee43f8c)
 
 **CAP Theorem**
 
-- [https://www.bmc.com/blogs/cap-theorem/](https://www.bmc.com/blogs/cap-theorem/)
-- [https://www.ibm.com/cloud/learn/cap-theorem](https://www.ibm.com/cloud/learn/cap-theorem)
-- [https://en.wikipedia.org/wiki/CAP_theorem](https://en.wikipedia.org/wiki/CAP_theorem)
-- [https://fhict.instructure.com/courses/12090/pages/gdpr-and-data-complexities-theoretical-background?module_item_id=751978](https://fhict.instructure.com/courses/12090/pages/gdpr-and-data-complexities-theoretical-background?module_item_id=751978)
-- [https://www.youtube.com/watch?v=k-Yaq8AHlFA](https://www.youtube.com/watch?v=k-Yaq8AHlFA)
+1. [https://www.bmc.com/blogs/cap-theorem/](https://www.bmc.com/blogs/cap-theorem/)
+1. [https://www.ibm.com/cloud/learn/cap-theorem](https://www.ibm.com/cloud/learn/cap-theorem)
+1. [https://en.wikipedia.org/wiki/CAP_theorem](https://en.wikipedia.org/wiki/CAP_theorem)
+1. [https://fhict.instructure.com/courses/12090/pages/gdpr-and-data-complexities-theoretical-background?module_item_id=751978](https://fhict.instructure.com/courses/12090/pages/gdpr-and-data-complexities-theoretical-background?module_item_id=751978)
+1. [https://www.youtube.com/watch?v=k-Yaq8AHlFA](https://www.youtube.com/watch?v=k-Yaq8AHlFA)
 
 **Base Principe**
 
-- [https://medium.com/@pranabj.aec/acid-cap-and-base-cc73dee43f8c](https://medium.com/@pranabj.aec/acid-cap-and-base-cc73dee43f8c)
+1. [https://medium.com/@pranabj.aec/acid-cap-and-base-cc73dee43f8c](https://medium.com/@pranabj.aec/acid-cap-and-base-cc73dee43f8c)
 
 **Data-centric architecture development**
 
-- [https://dzone.com/articles/from-lambda-to-kappa-a-guide-on-real-time-big-data](https://dzone.com/articles/from-lambda-to-kappa-a-guide-on-real-time-big-data)
-- [https://www.vistaprojects.com/blog/data-centric-architecture/#:~:text=Within%20data%2Dcentric%20architecture%2C%20the,%2C%20business%20decisions%2C%20and%20culture.](https://www.vistaprojects.com/blog/data-centric-architecture/#:~:text=Within%20data%2Dcentric%20architecture%2C%20the,%2C%20business%20decisions%2C%20and%20culture.)
-- [https://tdan.com/the-data-centric-revolution-data-centric-vs-data-driven/20288](https://tdan.com/the-data-centric-revolution-data-centric-vs-data-driven/20288)
-- [https://www.techtarget.com/searchdatacenter/tip/Why-and-how-to-adopt-a-data-centric-architecture](https://www.techtarget.com/searchdatacenter/tip/Why-and-how-to-adopt-a-data-centric-architecture)
+1. [https://dzone.com/articles/from-lambda-to-kappa-a-guide-on-real-time-big-data](https://dzone.com/articles/from-lambda-to-kappa-a-guide-on-real-time-big-data)
+1. [https://www.vistaprojects.com/blog/data-centric-architecture/#:~:text=Within%20data%2Dcentric%20architecture%2C%20the,%2C%20business%20decisions%2C%20and%20culture.](https://www.vistaprojects.com/blog/data-centric-architecture/#:~:text=Within%20data%2Dcentric%20architecture%2C%20the,%2C%20business%20decisions%2C%20and%20culture.)
+1. [https://tdan.com/the-data-centric-revolution-data-centric-vs-data-driven/20288](https://tdan.com/the-data-centric-revolution-data-centric-vs-data-driven/20288)
+1. [https://www.techtarget.com/searchdatacenter/tip/Why-and-how-to-adopt-a-data-centric-architecture](https://www.techtarget.com/searchdatacenter/tip/Why-and-how-to-adopt-a-data-centric-architecture)
