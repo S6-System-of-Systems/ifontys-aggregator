@@ -1,6 +1,7 @@
 package com.ifontys.aggregator.messaging;
 import com.ifontys.aggregator.logic.Aggregator;
 import com.ifontys.aggregator.logic.MatchLogic;
+import org.json.JSONObject;
 import org.springframework.amqp.core.TopicExchange;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
@@ -22,7 +23,8 @@ public class ReceiverController {
 
     @RabbitListener(queues = "#{autoDeleteQueue1.name}")
     public void Receive(String in) throws InterruptedException {
-        //template.convertAndSend("tusReceiveRequest", in);
-        aggregator.AggregateResults(in);
+        System.out.println("[X] RECEIVED IN RECEIVER: " + in);
+        JSONObject aggregatedData =  aggregator.AggregateResults(in);
+        template.convertAndSend("tusReceiveRequest", aggregatedData);
     }
 }
