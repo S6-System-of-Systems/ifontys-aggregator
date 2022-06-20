@@ -12,7 +12,8 @@
   - [6.2 Wat is de 3 V's van data?](#62-wat-is-de-3-vs-van-data)
   - [6.3 Distributed Data specifieke garanties?](#63-distributed-data-specifieke-garanties)
   - [6.4 Welke modellen zijn toepasbaar op distributed data?](#64-welke-modellen-zijn-toepasbaar-op-distributed-data)
-- [7. Referenties](#7-referenties)
+- [7. Conclusie onderzoek](#7-conclusie-onderzoek)
+- [8. Referenties](#8-referenties)
     - [3 V's](#3-vs)
     - [ACID Principe](#acid-principe)
     - [CAP Theorem](#cap-theorem)
@@ -284,7 +285,30 @@ Ook is het belangrijk om data traceerbaar te houden wat doormiddel van event sou
 - [https://www.youtube.com/watch?v=7Bh10yAycws](https://www.youtube.com/watch?v=7Bh10yAycws)
 - [https://martinfowler.com/eaaDev/EventSourcing.html](https://martinfowler.com/eaaDev/EventSourcing.html)
 
-# 7. Referenties
+# 7. Conclusie onderzoek
+
+We hebben in voorgande semesters gezien dat een scheideing van lagen binnen software belangrijk is.
+Om kleinschalige applicaties te maken gebruiktte we het MVC model (Model View Controller).
+Het systeem bestond uit 1 api, 1 databron en 1 frontend.
+We zien in [deelvraag 6.2](#62-wat-is-de-3-vs-van-data) dat grote systemen waar we spreken over "big data" niet simpel meer te maken zijn.
+Een simpel MVC architectuur zal niet meer afdoende zijn.
+
+In [deelvraag 6.3](#63-distributed-data-specifieke-garanties) concluderen we dat er vele principes zijn die gebruikt kunnen worden en vaak benodigd zijn bij een microservice architectuur.
+We hebben ondervonden dat bij grotere hoeveelheden data je te maken krijgt met al deze princiepes, niet een enkele ervan is geschikt voor gebruik,
+ze zijn verwant aan elkaar en kunnen niet afzonderlijk van elkaar gebruikt worden
+
+Bij grote microservice architecturen is het tracren van data lastig, zo lezen we in [deelvraag 6.4](#64-welke-modellen-zijn-toepasbaar-op-distributed-data)
+. Bij een MVC structuur is het gemakkelijk om te zien waar je data zich momenteel bevindt, waar het vandaan komt en waar het heel zal gaan.
+Bij een microservice architectuur is dat niet het geval, het is lastig uit te zoeken waar je data zich bevindt.
+Een oplossing hiervoor is eventlogging. Zo hebben we volgens het DOT framework een proof of concept gebouwd.
+We houden metadata bij van de message en kunnen zo aan het einde van de rit precies zien waar de message geweest is en waar het vandaan komt.
+
+De grote verschillen die je tegenkomt als je een simepele architectuur met een microservice architectuur vergelijkt is de hoeveelheid data waar je mee te maken krijgt.
+Bij een grote hoeveelheid data komt een groter risico en verantwoordelijheid. Je zal goed na moeten denken over hoe je zo'n architectuur opzet.
+De velocity van data ligt ook veel hoger in een microservice architectuur. 
+In deze architectuur komt je data op veel meer plekken terecht dan dat het in een MVC architectuur zal komen.
+
+# 8. Referenties
 
 ### 3 V's
 - [https://bigdataldn.com/news/big-data-the-3-vs-explained/](https://bigdataldn.com/news/big-data-the-3-vs-explained/)
