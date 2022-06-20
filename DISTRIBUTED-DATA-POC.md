@@ -42,12 +42,12 @@ De metadata zal in de institute endpoint geïnitialiseerd worden en aangevuld wo
 In de institute service komt het eerste bericht tot leven, daar initialiseren we de metadata.
 We maken een class Logger.java
 
-![project-tree](./images/project-tree.png)
+![project-tree](./images/projecttree.png)
 
 Deze class bezit een functie genaamd "AddLog".
 Addlog maakt een JSONObject aan genaamd "metadata". In dat object zit een JSONArray waar elke microservice logging aan toe zal voegen ("Tracer")
 
-![addlog-class](./images/addlog-class.png)
+![addlog-class](./images/addlogclass.png)
 
 Als we dan een request doen krijgen we bovenaan de docenten data en stuk metadata dat er als volgt uit ziet:
 
