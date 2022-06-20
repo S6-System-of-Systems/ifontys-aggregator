@@ -13,7 +13,11 @@
   - [6.3 Distributed Data specifieke garanties?](#63-distributed-data-specifieke-garanties)
   - [6.4 Welke modellen zijn toepasbaar op distributed data?](#64-welke-modellen-zijn-toepasbaar-op-distributed-data)
 - [7. Referenties](#7-referenties)
-      - [Data-centric architecture development](#data-centric-architecture-development)
+    - [3 V's](#3-vs)
+    - [ACID Principe](#acid-principe)
+    - [CAP Theorem](#cap-theorem)
+    - [Base Principe](#base-principe)
+    - [Data-centric architecture development](#data-centric-architecture-development)
 
 # 2. Document historie
 
@@ -254,15 +258,15 @@ Voor we begonnen aan onze eigen implementatie van eventlogging zijn we op het in
 
 # 7. Referenties
 
-**3 V's**
+### 3 V's
 - [https://bigdataldn.com/news/big-data-the-3-vs-explained/](https://bigdataldn.com/news/big-data-the-3-vs-explained/)
 - [Reserach universiteit Bruhl](https://link.springer.com/article/10.1007/s12599-013-0249-5)
 - 
 
-**ACID Principe**
+### ACID Principe
 1. [https://medium.com/@pranabj.aec/acid-cap-and-base-cc73dee43f8c](https://medium.com/@pranabj.aec/acid-cap-and-base-cc73dee43f8c)
 
-**CAP Theorem**
+### CAP Theorem
 
 1. [https://www.bmc.com/blogs/cap-theorem/](https://www.bmc.com/blogs/cap-theorem/)
 1. [https://www.ibm.com/cloud/learn/cap-theorem](https://www.ibm.com/cloud/learn/cap-theorem)
@@ -270,11 +274,11 @@ Voor we begonnen aan onze eigen implementatie van eventlogging zijn we op het in
 1. [https://fhict.instructure.com/courses/12090/pages/gdpr-and-data-complexities-theoretical-background?module_item_id=751978](https://fhict.instructure.com/courses/12090/pages/gdpr-and-data-complexities-theoretical-background?module_item_id=751978)
 1. [https://www.youtube.com/watch?v=k-Yaq8AHlFA](https://www.youtube.com/watch?v=k-Yaq8AHlFA)
 
-**Base Principe**
+### Base Principe
 
 1. [https://medium.com/@pranabj.aec/acid-cap-and-base-cc73dee43f8c](https://medium.com/@pranabj.aec/acid-cap-and-base-cc73dee43f8c)
 
-#### Data-centric architecture development
+### Data-centric architecture development
 
 1. [https://dzone.com/articles/from-lambda-to-kappa-a-guide-on-real-time-big-data](https://dzone.com/articles/from-lambda-to-kappa-a-guide-on-real-time-big-data)
 2. [https://www.vistaprojects.com/blog/data-centric-architecture/#:~:text=Within%20data%2Dcentric%20architecture%2C%20the,%2C%20business%20decisions%2C%20and%20culture.](https://www.vistaprojects.com/blog/data-centric-architecture/#:~:text=Within%20data%2Dcentric%20architecture%2C%20the,%2C%20business%20decisions%2C%20and%20culture.)
