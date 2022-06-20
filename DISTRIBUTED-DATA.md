@@ -119,9 +119,16 @@ Een laatste gedachtegang: er zijn mannieren om big data uit te pluizen en inzich
 De 3 V's beschrijven data die geanalyzeerd kan worden (het process waar je waarde uit data haalt). Alles bij elkaar genomen is er het potentieel voor erbazingwekkend inzicht of zorgwekkend overzicht. Net als bij elke grote kracht komt er ook bij big data een grote belofte en verantwoordelijkheid kijken.
 
 ***Conclusie***
+
 Big data wordt uitgedrukt in 3 V's. Volume (hoeveeheid data), velocity(snelheid waarmee data komt) en varierty(de verschillende soorten data.
 Als je twijfelt over of je met big data bezig bent kun je je houden aan de volgende vuistregel: Wanneer je praat over data en termen die verder gaan dan buckets, wanneer je begint te praten over epic kwantiteiten, grote flow en een wijd assortiment, dan heb je het over big data. 
 Analytics is het proces waar je data uitpluist om inzicht te geven wat toegepast kan worden op het oplossen van problemen en herkennen van kansen
+
+***Gebruikte documentatie***
+
+- [https://bigdataldn.com/news/big-data-the-3-vs-explained/](https://bigdataldn.com/news/big-data-the-3-vs-explained/)
+- [Reserach universiteit Bruhl](https://link.springer.com/article/10.1007/s12599-013-0249-5)
+
 ## 6.3 Distributed Data specifieke garanties?
 
 Op het gebied van databases zijn relational databases al bekend, waarin transacties worden gebruikt om updates van informatie te verwerken. Als er in grote hoeveelheden data/gegevens worden bijgewerkt kan dit een uitdaging zijn om de inhoud van de database(s) in een geldige staat te houden. Om te voorkomen dat data wordt verloren kan er een mechanisme worden gebruikt om de transacties te valideren. Het mechanisme wat dan toegepast kan worden, wordt ook wel het ACID-principe genoemd. Het ACID-principe is een principe dat gebruikt wordt om de transacties van een database te valideren.
@@ -192,11 +199,21 @@ In dit voorbeeld kon de `Payment Service` reageren op de `Order Service`, hoewel
 
 Nu duidelijk wat de principes inhouden en kunnen bieden is er niet een specifieke principe die gebruikt wordt voor het maken van een gedistribueerde applicatie. Onderdelen van het ene principe zijn te vinden in de andere principe, ze kunnen dus niet echt gezien worden als een afzonderlijke regel/stelling/principe, maar meer een leidraad die ons op het goede pad brengt. Uiteraard komen bepaalde kenmerken meer naar boven dan andere bij verschillende principes.
 
+***Gebruikte documentatie***
+
+- [https://medium.com/@pranabj.aec/acid-cap-and-base-cc73dee43f8c](https://medium.com/@pranabj.aec/acid-cap-and-base-cc73dee43f8c)
+- [https://www.bmc.com/blogs/cap-theorem/](https://www.bmc.com/blogs/cap-theorem/)
+- [https://www.ibm.com/cloud/learn/cap-theorem](https://www.ibm.com/cloud/learn/cap-theorem)
+- [https://en.wikipedia.org/wiki/CAP_theorem](https://en.wikipedia.org/wiki/CAP_theorem)
+- [https://fhict.instructure.com/courses/12090/pages/gdpr-and-data-complexities-theoretical-background?module_item_id=751978](https://fhict.instructure.com/courses/12090/pages/gdpr-and-data-complexities-theoretical-background?module_item_id=751978)
+- [https://www.youtube.com/watch?v=k-Yaq8AHlFA](https://www.youtube.com/watch?v=k-Yaq8AHlFA)
+- [https://medium.com/@pranabj.aec/acid-cap-and-base-cc73dee43f8c](https://medium.com/@pranabj.aec/acid-cap-and-base-cc73dee43f8c)
+
 ## 6.4 Welke modellen zijn toepasbaar op distributed data?
 
 Omdat data aan het veranderen is en het gebruik van data nog sneller verandert, is er een enorme groei in het aantal datatools en ontwerpstrategieen die dit ondersteunen. Hieronder staan 5 verschillende modellen uitgelicht voor het opnemen van data in voor het ontwikkelproces waar grotendeels niet aan gedacht wordt.
 
-**_Data-centric architecture development_**
+**Data-centric architecture development**
 
 Organisaties beginnen meer te kijken naar data-centric modellen, want er zijn veel limitaties met betrekking tot application-centric toepassingen. Het voornamelijkste is dat met een data-centric architecture de data aan de frontline staat.
 
@@ -204,57 +221,53 @@ Veel online bedrijven hebben sinds hun oprichting een data-centrische benadering
 
 Met de data-centrische benadering ontwerpen IT-teams infrastructuur rond gegevensvereisten in plaats van gegevens pasbaar te maken in de infrastructuur. Hoewel kosten en operationeel gemak nog steeds belangrijk zijn, worden de gegevens centraal gezet voor de manier van deployen in de infrastructuur.
 
-**_Data stream processing_**
+**Data stream processing**
 
 Op de markt van vandaag zijn er veel oplossingen voor dynamic data stream processing oplossingen te vinden, wat niet alleen een mooie oplossing is, maar wat ook absoluut meer complexiteit in de architectuur brengt. De reden hiervan is dat data niet alleen opgeslagen wordt, maar het analyseren en beschikbaar stellen van data aan de desbetreffende applicaties (op een snelle manier) komt er ook bij kijken. Een bijkomend probleem is dat met Data streaming data altijd in beweging is en (bijna) nooit stil staat.
 
 De data die in beweging is wordt doormiddel van event streaming platforms geleverd zoals Confluent. Met deze vraag is het dan ook de bedoeling om een antwoord te kunnen geven op de vraag hoe data streaming werkt en hoe dit eventueel toegepast kan worden in de praktijk.
 
+***Event Streaming***
 
+Event streaming is een manier hoe men applicaties ontwerpen en ontwikkelen, de applicaties reageren op dingen die om zich heen gebeuren, of in andere woorden, de applicaties reageren op events. Deze events worden aangemaakt door applicaties die een event streaming mechanisme gebruiken om informatie te distribueren.
 
+Maar wat is nou precies een event en wat kan met een event precies uitgevoerd worden.
 
-<!-- veel verschillende dynamische data sources, omdat er zoveel keuze is, heeft het de enterprise omgeving in de data architectuur een stuk complexer gemaakt met de reden dat het niet alleen opslaan van data is, maar ook het analyseren en beschikbaar stellen aan applicaties op een snelle manier
+Een event kan ook wel genoemd worden als een feit - iets dat gebeurd is in het verleden:
 
-Met het probleem van data, komt ook het probleem dat data altijd in beweging is.
-
-De data die in beweging is wordt geleverd door event streaming platforms zoals Confluent, met deze vraag is het de bedoeling om hier een antwoord op te geven hoe data streaming werkt en hoe dit eventueel toegepast kan worden.
-
-**Event streaming**
-
-event streaming is een manier van ontwerpen en ontwikkelen van applicaties, de applicaties reageren op dingen die om zich heen gebeuren, in andere woorden, de applicaties reageren op events. Deze events worden aangemaakt door applicaties die een event streaming mechanisme gebruiken om informatie te distribueren.
-
-Wat is een event
-
-Een event is een feit - iets dat gebeurd is in het verleden:
-
-- een gebruiker heeft een actie uitgevoerd
+- een gebruiker heeft een actie uitgevoerd (bv. adres gewijzigd)
 - een item is verwijderd uit een winkelwagen
 
-Als een applicatie zo een event binnenkrijgt, kan de betreffende applicatie hierop handelen.
+Als een applicatie zo een event binnenkrijgt, kan de applicatie (die het event heeft ontvangen) hierop handelen:
 
-Deze applicaties worden ook wel stream processing applicaties genoemd.
+- adres wordt visueel gewijzigd aan de gebruiker
+- het item is verwijderd uit de winkelwagen en niet meer zichtbaar
 
-Organizaties implementeren event streaming om real-time processing uit te kunnen voeren en er zijn hier verschillende redenen voor:
+Deze applicaties worden ook wel stream processing applicaties genoemd. Organizaties implementeren event straming om real-time processing uit te kunnen voeren en er zijn hier verschillende redenen voor:
 
 - Het verbeteren van customer experience
-- Nieuwe functionaliteit wat eerst niet geimplementeerd kon worden
-- Uiteraard de competitie op de markt
-
-https://assets.confluent.io/m/26933af228cc1d15/original/20211129-Guide-Adopting_Confluent.pdf -->
-
+- Nieuwe functionaliteit toepassen wat eerst niet mogelijk was zonder event streaming
+- Uiteraard de competitie op de markt bijhouden
 
 **_Data event sourcing_**
 
+Voor distributed data is het ook mogelijk om event sourcing toe te passen
+
 **_Distributed Data Structures (DDS)_**
 
-**Prototyping**
+***Prototyping***
 
 Uit de voorbeeldmodellen in canvas die gaan over distributed data passen we er een toe. We zullen eventlogging implementeren in onze microservices.
 Er zal vanaf het eerste bericht metadata meegegeven worden die bijhouden bij welke microservice en op welk moment de message daar is geweest en belangrijke data zoals de versie van de aggregator en transformator die het bericht behandeld hebben.
 
 
-**Available Product analysis**
+***Available Product analysis***
 Voor we begonnen aan onze eigen implementatie van eventlogging zijn we op het internet gaan zoeken naar oplossingen die al aangeboden voor event logging. 
+
+***Gebruikte documentatie***
+
+- [https://assets.confluent.io/m/26933af228cc1d15/original/20211129-Guide-Adopting_Confluent.pdf](https://assets.confluent.io/m/26933af228cc1d15/original/20211129-Guide-Adopting_Confluent.pdf)
+- [https://www.youtube.com/watch?v=7Bh10yAycws](https://www.youtube.com/watch?v=7Bh10yAycws)
 
 # 7. Referenties
 
