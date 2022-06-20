@@ -25,6 +25,9 @@
 |-------:|------------------------------------------------------------------------------------------------------------------------------------------------|------------|
 |    0.1 | Eerste opzet document                                                                                                                          | 30-05-2022 |
 |    0.2 | Uitwerking deelvragen:<br/>- ACID principe<br/>- BASE principe<br/>Strategieen toegevoegd<br/>Gestart met sub-vraag 4<br/>Lay-out aanpassingen | 16-6-2022  |
+|    0.3 | Uitwerking deelvragen:<br/>- Bronvermeldingen <br/>- Event streaming notes                                                                     | 19-6-2022  |
+|    0.4 | Uitwerking deelvrageb:<br/>- Data-centric architecture development <br/>- Data stream processing<br/>- conclusie sub-vraag 4                   | 20-6-2022  |
+
 
 
 # 3. Inleiding
@@ -253,21 +256,33 @@ Deze applicaties worden ook wel stream processing applicaties genoemd. Organizat
 
 Voor distributed data is het ook mogelijk om event sourcing toe te passen
 
+> Zie [DISTRIBUTED-DATA-POC.md](./DISTRIBUTED-DATA-POC.md) voor de uitleg en *proof of concept* die gemaakt is voor het aantonen van distributed data.
+
 **_Distributed Data Structures (DDS)_**
 
-***Prototyping***
+**Prototyping**
 
 Uit de voorbeeldmodellen in canvas die gaan over distributed data passen we er een toe. We zullen eventlogging implementeren in onze microservices.
 Er zal vanaf het eerste bericht metadata meegegeven worden die bijhouden bij welke microservice en op welk moment de message daar is geweest en belangrijke data zoals de versie van de aggregator en transformator die het bericht behandeld hebben.
 
 
-***Available Product analysis***
+**Available Product analysis**
+
 Voor we begonnen aan onze eigen implementatie van eventlogging zijn we op het internet gaan zoeken naar oplossingen die al aangeboden voor event logging. 
 
-***Gebruikte documentatie***
+**Conclusie**
+
+Wat er voornamelijk te zien is in het gebied van distributed data, is dat er op de markt veel keuze is, en veel manieren zijn om distributed data toe te passen aan een infrastructuur. 
+
+Zo is er event based streaming, dat op basis van data streams een actie-reactie gebeurd waardoor een applicatie de juiste informatie zo live mogelijk de laatste versie van de data beschikbaar heeft en de gebruiker op een snelle wijze up-to-date kan brengen. Dit is heel handig voor infrastructuren die gebruik maken van meerdere services, de andere services moet namelijk zo snel mogelijk gemeld worden dat er een aanpassing is geweest in data, waardoor de ene service niet achter komt te liggen op de andere.
+
+Ook is het belangrijk om data traceerbaar te houden wat doormiddel van event sourcing heel goed gedaan kan worden. Event sourcing zorgt dat metadata meegestuurd wordt met acties, waardoor verschillende services, op basis van de beschikbare metadata, kunnen zien wat er gebeurd is en kunnen acties daarop weer baseren. 
+
+**Gebruikte documentatie**
 
 - [https://assets.confluent.io/m/26933af228cc1d15/original/20211129-Guide-Adopting_Confluent.pdf](https://assets.confluent.io/m/26933af228cc1d15/original/20211129-Guide-Adopting_Confluent.pdf)
 - [https://www.youtube.com/watch?v=7Bh10yAycws](https://www.youtube.com/watch?v=7Bh10yAycws)
+- [https://martinfowler.com/eaaDev/EventSourcing.html](https://martinfowler.com/eaaDev/EventSourcing.html)
 
 # 7. Referenties
 
