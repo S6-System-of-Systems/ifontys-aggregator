@@ -1,6 +1,5 @@
 
 # Distributed Data POC ( Event logging)
-![image](https://user-images.githubusercontent.com/27158658/163884438-2f51ab63-ae20-48f9-b2b5-5e462fb576f2.png)
 
 ## 1. Inhoud
 - [1. Inhoud](#1-inhoud)
