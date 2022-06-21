@@ -1,24 +1,37 @@
 package com.ifontys.aggregator.logic;
 
-import com.rabbitmq.client.Command;
-import org.apache.tomcat.util.json.JSONParser;
-
+import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.stereotype.Component;
 
-import java.lang.reflect.Array;
-import java.nio.charset.StandardCharsets;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 @Component
 public class Aggregator {
 
     JSONObject aggregatedData= new JSONObject();
     JSONObject data = new JSONObject();
+    JSONObject metadata = new JSONObject();
+    JSONObject newmeta = new JSONObject();
+    JSONArray tracer = new JSONArray();
+    private final static double aggregatorVersion = 1.0;
 
-    public void AggregateResults(String result){
+    public JSONObject AggregateResults(String result){
         data = new JSONObject(result);
+        JSONObject trace = new JSONObject("{'microservice': 'ifontys-aggregator', 'date': '"+ LocalDateTime.now() + "'}");
+        metadata = data.getJSONObject("metadata");
+        tracer = metadata.getJSONArray("tracer");
+        tracer.put(trace);
+        metadata.put("aggegatorVersion", Double.toString(aggregatorVersion));
+        metadata.put("tracer", tracer);
+
+        newmeta.put("tracer", tracer);
+        newmeta.put("aggregatorVersion", aggregatorVersion);
+
+
+
+        aggregatedData.put("metadata", newmeta);
 
         PutProperty("pcn", "canvas","id", String.class);
         PutProperty("name", "canvas", "givenName", String.class);
@@ -52,17 +65,18 @@ public class Aggregator {
         PutProperty("responsibilities", "sharepoint", "responsibilities", ArrayList.class);
         PutProperty("skills", "sharepoint", "skills", ArrayList.class);
         PutProperty("title", "sharepoint", "title", String.class);
-      
+
 
         System.out.println("[X] Aggregatred data: " + aggregatedData);
+        return aggregatedData;
     }
 
     public void PutProperty(String newName, String source, String name, Class<?> type){
         try{
             if(type == String.class){
-                aggregatedData.put(newName, data.getJSONObject(source).getString(name));
+                aggregatedData.put(newName, data.getJSONObject("data").getJSONObject(source).getString(name));
             }else if(type == ArrayList.class){
-                aggregatedData.put(newName, data.getJSONObject(source).getJSONArray(name));
+                aggregatedData.put(newName, data.getJSONObject("data").getJSONObject(source).getJSONArray(name));
             }
         } catch (Exception e){
 
